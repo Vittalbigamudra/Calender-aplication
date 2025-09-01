@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calendar</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="calendar.html">Calendar</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScXU-bCbh-zRBinUm2iFhKDLnxdZkoCaWuU67mxWb_AoZWeTg/viewform?usp=sharing&ouid=106509044178132716995" target="_blank" rel="noopener">
+                    Innovation Hub
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Add this above your #calendar-day-labels -->
+<div id="calendar-controls" style="text-align:center; margin-top:20px;">
+    <button id="prev-month">&lt; Prev</button>
+    <span id="month-year-label" style="font-weight:bold; margin: 0 1em;"></span>
+    <button id="next-month">Next &gt;</button>
+</div>
+    <div id="calendar-day-labels">
+        <div class="date-label">Sun</div>
+        <div class="date-label">Mon</div>
+        <div class="date-label">Tue</div>
+        <div class="date-label">Wed</div>
+        <div class="date-label">Thu</div>
+        <div class="date-label">Fri</div>
+        <div class="date-label">Sat</div>
+    </div>
+    <div id="calendar"></div>
+    <div id="event-popover" style="display:none; position:absolute; min-width:220px; background:#fff; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 12px rgba(0,0,0,0.13); z-index:1100; padding:16px;"></div>
+<div id="timeline-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:1200; align-items:center; justify-content:center;">
+  <div id="timeline-content" style="background:#fff; border-radius:10px; padding:24px; min-width:340px; min-height:300px; box-shadow:0 4px 24px rgba(0,0,0,0.18); max-width:90vw; max-height:90vh; overflow:auto;">
+    <h2 style="margin-top:0;">Day Timeline</h2>
+    <div id="timeline-list"></div>
+    <button id="close-timeline" style="margin-top:18px;">Close</button>
+  </div>
+</div>
+    
+    <div id="event-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:1000; align-items:center; justify-content:center;">
+  <div id="event-modal-content" style="background:#fff; border-radius:10px; padding:24px; min-width:300px; box-shadow:0 4px 24px rgba(0,0,0,0.18);">
+    <h2 style="margin-top:0;">Add Event</h2>
+    <form id="event-form">
+  <label for="event-title">Title:</label>
+  <input type="text" id="event-title" required style="width:100%;margin-bottom:10px;">
+  <label for="event-time">Time:</label>
+  <input type="time" id="event-time" required style="width:100%;margin-bottom:10px;">
+  <label for="event-desc">Description:</label>
+  <textarea id="event-desc" rows="3" style="width:100%;margin-bottom:10px;"></textarea>
+  <button type="submit" style="margin-right:10px;">Save</button>
+  <button type="button" id="close-modal">Cancel</button>
+</form>
+  </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
